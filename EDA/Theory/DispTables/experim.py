@@ -24,6 +24,28 @@ def print_add_elems_ab():
 print_add_elems_ab()
 
 
+
+class Example:
+    def __init__(self, x, y):
+        self.x = x 
+        self.y = y
+
+    def __hash__(self):
+        return hash( (self.x, self.y) )
+
+    def __eq__(self, other):
+        return (isinstance(other, Example) and self.x == other.x and self.y == other.y)
+
+a = Example(1, 2)
+b = Example(1, 2)
+
+print(hash(a), hash(b), hash(a) == hash(b))
+
+
+
+
+
+
 from typing import List
 class HashTable:
     def __init__(self, initial_size: int) -> None:
@@ -33,10 +55,10 @@ class HashTable:
     def __len__(self) -> int:
         return self.n
 
-    def _hash_function(self, value):
+    def _hash_function(self, value) -> int:
         return hash(value) % len(self._table)
 
-    def __getitem__(self, key):
+    def __getitem__(self, key) -> int:
         return self._table[key]
 
     def find(self, value: int) -> int:
@@ -50,5 +72,4 @@ class HashTable:
         if value not in self._table[index]:
             self._table[index].append(value)
             self.n += 1
-
 
