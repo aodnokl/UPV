@@ -1,4 +1,4 @@
-## Data Structures and Algorithms
+## EDA: Data Structures and Algorithms
 
 This course introduces **data representations and algorithmic techniques** for solving medium-complexity problems, with a focus on:
 
