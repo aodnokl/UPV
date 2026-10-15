@@ -407,15 +407,131 @@
   <rdf:type rdf:resource="#Country"/>
 </owl:NamedIndividual>
 
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#Persona"/>
-    <rdf:Description rdf:about="#Pedido"/>
-    <rdf:Description rdf:about="#Pizza"/>
-    <rdf:Description rdf:about="#PizzaBase"/>
-    <rdf:Description rdf:about="#PizzaTopping"/>
-  </owl:members>
-</owl:AllDisjointClasses>
+<owl:NamedIndividual rdf:about="#base_custom_1">
+  <rdf:type rdf:resource="#ThinAndCrispyBase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#base_custom_2">
+  <rdf:type rdf:resource="#ThinAndCrispyBase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#base_custom_3">
+  <rdf:type rdf:resource="#ThinAndCrispyBase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mozzarella_custom_1">
+  <rdf:type rdf:resource="#MozzarellaTopping"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#olive_custom_2">
+  <rdf:type rdf:resource="#OliveTopping"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#parmesan_custom_3">
+  <rdf:type rdf:resource="#ParmesanTopping"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pizza_custom_1">
+  <rdf:type rdf:resource="#Pizza"/>
+  <hasBase rdf:resource="#base_custom_1"/>
+  <hasTopping rdf:resource="#mozzarella_custom_1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pizza_custom_2">
+  <rdf:type rdf:resource="#Pizza"/>
+  <hasBase rdf:resource="#base_custom_2"/>
+  <hasTopping rdf:resource="#olive_custom_2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pizza_custom_3">
+  <rdf:type rdf:resource="#Pizza"/>
+  <hasBase rdf:resource="#base_custom_3"/>
+  <hasTopping rdf:resource="#parmesan_custom_3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#juan_cano">
+  <rdf:type rdf:resource="#Cliente"/>
+  <realizaPedido rdf:resource="#pedido_101"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ana_uceda">
+  <rdf:type rdf:resource="#Cliente"/>
+  <realizaPedido rdf:resource="#pedido_103"/>
+  <realizaPedido rdf:resource="#pedido_102"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carlos_puente">
+  <rdf:type rdf:resource="#Cliente"/>
+  <realizaPedido rdf:resource="#pedido_104"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#maria_perez">
+  <rdf:type rdf:resource="#Cliente"/>
+  <realizaPedido rdf:resource="#pedido_105"/>
+  <realizaPedido rdf:resource="#pedido_106"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_101">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#american_101"/>
+  <contienePizza rdf:resource="#margherita_101"/>
+  <contienePizza rdf:resource="#pizza_custom_1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_102">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#soho_102"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_103">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#margherita_103"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_104">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#soho_104"/>
+  <contienePizza rdf:resource="#american_hot_104"/>
+  <contienePizza rdf:resource="#pizza_custom_2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_105">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#margherita_105"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pedido_106">
+  <rdf:type rdf:resource="#Pedido"/>
+  <contienePizza rdf:resource="#pizza_custom_3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#margherita_101">
+  <rdf:type rdf:resource="#MargheritaPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#american_101">
+  <rdf:type rdf:resource="#AmericanPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soho_102">
+  <rdf:type rdf:resource="#SohoPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#margherita_103">
+  <rdf:type rdf:resource="#MargheritaPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soho_104">
+  <rdf:type rdf:resource="#SohoPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#american_hot_104">
+  <rdf:type rdf:resource="#AmericanHotPizza"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#margherita_105">
+  <rdf:type rdf:resource="#MargheritaPizza"/>
+</owl:NamedIndividual>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
