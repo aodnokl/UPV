@@ -180,3 +180,26 @@ ORDER BY P.nombre;
 
 -- PROBLEMA EXAMEN
 
+
+SELECT p.cod_peli, p.titulo
+FROM pelicula p
+WHERE NOT EXISTS (
+    SELECT *
+    FROM actua ac
+    WHERE ac.cod_peli = p.cod_peli
+    AND ac.papel = 'Principal'
+    AND NOT EXISTS (
+                SELECT *
+                FROM actor a, pais pa
+                WHERE a.cod_act = ac.cod_act
+                AND a.cod_pais = pa.cod_pais
+                AND pa.nombre = 'España'
+    )
+)
+AND EXISTS (
+    SELECT *
+    FROM actua ac
+    WHERE ac.cod_peli = p.cod_peli
+    AND ac.papel = 'Principal'
+)
+ORDER BY p.titulo;
