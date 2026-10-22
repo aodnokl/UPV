@@ -473,9 +473,9 @@
 
 <owl:NamedIndividual rdf:about="#pedido_101">
   <rdf:type rdf:resource="#Pedido"/>
-  <contienePizza rdf:resource="#american_101"/>
   <contienePizza rdf:resource="#margherita_101"/>
   <contienePizza rdf:resource="#pizza_custom_1"/>
+  <contienePizza rdf:resource="#american_101"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#pedido_102">
@@ -490,8 +490,8 @@
 
 <owl:NamedIndividual rdf:about="#pedido_104">
   <rdf:type rdf:resource="#Pedido"/>
-  <contienePizza rdf:resource="#soho_104"/>
   <contienePizza rdf:resource="#american_hot_104"/>
+  <contienePizza rdf:resource="#soho_104"/>
   <contienePizza rdf:resource="#pizza_custom_2"/>
 </owl:NamedIndividual>
 
