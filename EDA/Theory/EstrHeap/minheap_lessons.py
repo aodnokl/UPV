@@ -56,8 +56,8 @@ class MinHeap:
             # y subimos
             pos = parent_pos
             parent_pos = (pos-1)//2 # índice de su padre
-            
-
+             
     def __repr__(self):
         return repr(self._data)
-        
+
+
