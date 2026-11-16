@@ -1,0 +1,26 @@
+BASE DE HECHOS:
+; Prestamos vencidos
+(prestamoVencido Ana L1)
+(prestamoVencido Ana L2)
+(prestamoVencido Luis L3)
+; Estado de los libros
+(libro L1 prestado)
+(libro L2 prestado)
+(libro L3 prestado)
+(libro L4 disponible)
+(libro L5 disponible)
+; Solicitudes
+(solicitud Marta L4)
+(solicitud Ana L5)
+
+BASE DE CONOCIMIENTO:
+; R1: Registrar incidencias
+(defrule registrar-incidencia (prestamoVencido ?usuario ?libro) => (assert (incidencia ?usuario ?libro)))
+; R2: Bloquear usuarios con dos incidencias
+(defrule bloquear-usuario (incidencia ?usuario ?libro1) (incidencia ?usuario ?libro2) (test (neq ?libro1 ?libro2)) => (assert (bloqueado ?usuario)))
+; R3: Notificar el bloqueo
+(defrule notificar-bloqueo (bloqueado ?usuario) => (printout t "ALERTA -> Usuario " ?usuario ": cuenta bloqueada." crlf))
+; R4: Autorizar prestamos
+(defrule autorizar-prestamo (solicitud ?usuario ?libro) (libro ?libro disponible) (not (bloqueado ?usuario)) => (assert (prestamoAutorizado ?usuario ?libro)))
+; R5: Actualizar disponibilidad
+(defrule actualizar-disponibilidad (prestamoAutorizado ?usuario ?libro) ?l <- (libro ?libro disponible) => (retract ?l) (assert (libro ?libro prestado)))
